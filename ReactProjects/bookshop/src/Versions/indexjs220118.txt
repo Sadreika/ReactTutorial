@@ -1,0 +1,121 @@
+//Usings
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+//CSS
+import './index.css'
+// ./ - the same file
+// ../ - one above
+
+function BookList(){
+  // Declaring variables
+  // const title = 'Atomic Habits';
+  // const author = 'James Clear';
+  // const image = 'https://images-na.ssl-images-amazon.com/images/I/71F4+7rk2eL._AC_UL254_SR254,254_.jpg'
+
+  // Creating objects
+  const firstBook = {
+    image:'https://images-na.ssl-images-amazon.com/images/I/71F4+7rk2eL._AC_UL254_SR254,254_.jpg',
+    author: 'James Clear',
+    title:'Atomic Habits'
+  }
+
+   const secondBook = {
+    image:'https://images-na.ssl-images-amazon.com/images/I/41Lq0vHRzrS._AC_SX184_.jpg',
+    author: 'Kazuo Ishiguro ',
+    title:'Klara and the Sun: A novel'
+  }
+
+  // Passing object variables to function
+  return (
+    <section className='booklist'>
+      <Book image={firstBook.image} author={firstBook.author} title={firstBook.title}/>
+      <Book image={secondBook.image} author={secondBook.author} title={secondBook.title}></Book>
+    </section>
+  );
+
+  // Using children
+  // return (
+  // <section className='booklist'>
+  //   {/* <Book title={title} author={author} image={image}/> */}
+  //   <Book image={firstBook.image} author={firstBook.author} title={firstBook.title}/>
+
+  //   <Book
+  //     image={secondBook.image}
+  //     author={secondBook.author}
+  //     title={secondBook.title}
+  //   >
+  //     <p>Children prop</p>
+  //   </Book>
+  //   {/* <Book/>
+  //   <Book/> */}
+  // </section>
+  // );
+}
+
+// props and arguments
+const Book = ({image, title, author}) =>
+{
+  return (
+    <article className='book'>
+      <img src={image} alt=""/>
+      <h2>{title}</h2>
+      <h4>{author}</h4>
+    </article>
+  );
+}
+
+// Using children
+// const Book = ({image, title, author, children}) =>
+// {
+//   return (
+//     <article className='book'>
+//       <img src={image} alt=""/>
+//       <h2>{title.toUpperCase()}</h2>
+//       <h4>{author}</h4>
+//       {children}
+//       {/*<h4 style={{color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}>James Clear</h4> */}
+//     </article>
+//   );
+// }
+
+// Using javascript in html
+// const Book = () => {
+//   const title = 'Atomic Habits';
+//   const author = 'James Clear';
+//   const image = 'https://images-na.ssl-images-amazon.com/images/I/71F4+7rk2eL._AC_UL254_SR254,254_.jpg'
+//   return (
+//     <article className='book'>
+//       <img src={image} alt=""/>
+//       <h2>{title.toUpperCase()}</h2>
+//       <h4>{author}</h4>
+//       {/*<h4 style={{color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}>James Clear</h4> */}
+//     </article>
+//   );
+// }
+
+// function Book()
+// {
+//   return (
+//     <article className='book'>
+//       <Image/>
+//       <Title/>
+//       <Author/>
+//     </article>
+//   );
+// }
+
+// Creating functions
+// function Image()
+// {
+//   return (<img src="https://images-na.ssl-images-amazon.com/images/I/71F4+7rk2eL._AC_UL254_SR254,254_.jpg" alt=""/>)
+// }
+
+// const Title = () => <h2>Atomic Habits</h2>
+
+// const Author = () =>
+// {
+//   return (<h4 style={{color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}>James Clear</h4>);
+// }
+
+ReactDOM.render(<BookList/>, document.getElementById('root'));
